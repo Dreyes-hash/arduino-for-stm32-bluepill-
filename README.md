@@ -1,7 +1,7 @@
-## Arduino para STM32 BLUEPILL
+# Arduino para STM32 BLUEPILL
 Profesor: Dr. Adán Geovanni Medrano Chávez  
 UEA: Microcontroladores
-# Integrantes del equipo:
+## Integrantes del equipo:
 Diego Reyes Blancas
 ## Objetivo de la práctica
 1. Utilizar la capa de abstraccion de ardware de Arduino para trabajar con el microcontrolador "Bluepill STM32F103C8T6"
@@ -28,12 +28,12 @@ platformio run --target upload
 este programa se encarga de leer la entrada analogica correspondiente a el potenciometro e imprimir el valor en voltios en la ppantalla oled,tambien
 connfigura los botones encargados de enviar la señal infraroja y de cambiar el modo de tranajo del led.
 ## configuración del hardware
-# configuracion del led infrarojo utilizando la biblioteca IRremote.h
+### configuracion del led infrarojo utilizando la biblioteca IRremote.h
 ````
 int IRPin = PA4; 
 IRsend irsend(IRPin); //configura el pin PA4 para enviar la señal
 ````
-# configuración de las entradas 
+### configuración de las entradas 
 ````
 void setup() {
   // configura el puerto PA5,PA7 Como entradas
@@ -43,7 +43,7 @@ void setup() {
   ...
 ]
 ````
-# configuracion de la pantalla OLED
+### configuracion de la pantalla OLED
 ````
 Adafruit_SSD1306 display(128, 64, &Wire, -1);
 void setup() {
@@ -52,7 +52,7 @@ void setup() {
   display.setTextColor(SSD1306_WHITE); //configura el color de la pantalla
 }
 ````
-## Declaraciones globales y por adelantado
+### Declaraciones globales y por adelantado
 ````
 void setLED();
 void sendSignal();
@@ -63,7 +63,7 @@ int ledMode = 0;
 IRsend irsend(IRPin); //configura el pin PA4 para enviar la señal
 Adafruit_SSD1306 display(128, 64, &Wire, -1); //comunicación I2C a través del objeto Wire
 ````
-## Lectura de la entrada digital e impreción en pantalla
+### Lectura de la entrada digital e impreción en pantalla
 ````
 void loop() {
   ...
@@ -77,7 +77,7 @@ void loop() {
   delay(100); // Agregar un retardo para evitar la actualización excesiva de la pantalla
 }
 ````
-## Función sendSignal 
+### Función sendSignal 
 ````
 void sendSignal() {
   // Convertir el valor de percentage a un formato adecuado para el protocolo 
@@ -90,7 +90,7 @@ void sendSignal() {
   delay(300);	
 }
 ````
-## Función setLED
+### Función setLED
 ````
 void setLED() {
 unsigned long tData; //variable para enviar la señal 
