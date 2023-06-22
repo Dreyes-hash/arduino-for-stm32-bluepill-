@@ -1,4 +1,4 @@
-ó# arduino para STM32 BLUEPILL
+## Arduino para STM32 BLUEPILL
 Profesor: Dr. Adán Geovanni Medrano Chávez  
 UEA: Microcontroladores
 # Integrantes del equipo:
