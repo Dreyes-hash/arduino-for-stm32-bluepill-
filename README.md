@@ -29,11 +29,13 @@ este programa se encarga de leer la entrada analogica correspondiente a el poten
 connfigura los botones encargados de enviar la señal infraroja y de cambiar el modo de tranajo del led.
 ## configuración del hardware
 ### configuracion del led infrarojo utilizando la biblioteca IRremote.h
+estas líneas de código permiten configurar el pin PA4 como el pin de salida para enviar señales IR mediante la creación de un objeto IRsend y pasando el número de pin correspondiente al constructor de la clase. 
 ````
 int IRPin = PA4; 
 IRsend irsend(IRPin); //configura el pin PA4 para enviar la señal
 ````
 ### configuración de las entradas 
+en la función setup() se configuran los pines PA5 y PA7 como entradas y se establece una interrupción en el pin PA5 para ejecutar la función sendSignal() cuando se detecte un flanco de subida.
 ````
 void setup() {
   // configura el puerto PA5,PA7 Como entradas
@@ -41,9 +43,10 @@ void setup() {
   pinMode(PA7, INPUT);
   attachInterrupt(PA5, sendSignal, RISING); // configura la interrupción de PA5
   ...
-]
+}
 ````
 ### configuracion de la pantalla OLED
+estas líneas de código crean un objeto display que representa la pantalla OLED y lo inicializan para establecer la comunicación con el Arduino. También se configura el color del texto en la pantalla para que sea blanco.
 ````
 Adafruit_SSD1306 display(128, 64, &Wire, -1);
 void setup() {
@@ -64,6 +67,7 @@ IRsend irsend(IRPin); //configura el pin PA4 para enviar la señal
 Adafruit_SSD1306 display(128, 64, &Wire, -1); //comunicación I2C a través del objeto Wire
 ````
 ### Lectura de la entrada digital e impreción en pantalla
+en la función loop() se lee el valor analógico del pin PA6, se realiza una conversión a voltaje, se muestra el valor del voltaje en la pantalla OLED 
 ````
 void loop() {
   ...
