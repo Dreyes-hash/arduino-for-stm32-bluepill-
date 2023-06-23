@@ -25,8 +25,8 @@ para realizar la carga del programa al procesador del microcontrolador basta con
 platformio run --target upload
 ````
 ## Programa para enviar la señal infraroja
-este programa se encarga de leer la entrada analogica correspondiente a el potenciometro e imprimir el valor en voltios en la ppantalla oled,tambien
-connfigura los botones encargados de enviar la señal infraroja y de cambiar el modo de tranajo del led.
+este programa se encarga de leer la entrada analogica correspondiente a el potenciometro e imprimir el valor en voltios en la pantalla oled,tambien
+configura los botones encargados de enviar la señal infraroja y de cambiar el modo de trabajo del led.
 ## configuración del hardware
 ### configuracion del led infrarojo utilizando la biblioteca IRremote.h
 estas líneas de código permiten configurar el pin PA4 como el pin de salida para enviar señales IR mediante la creación de un objeto IRsend y pasando el número de pin correspondiente al constructor de la clase. 
